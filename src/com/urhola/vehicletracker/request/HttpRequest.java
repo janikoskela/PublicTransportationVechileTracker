@@ -14,21 +14,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.urhola.vehicletracker;
+package com.urhola.vehicletracker.request;
 
-import com.urhola.vehicletracker.connection.Connection;
-import com.urhola.vehicletracker.exception.ConnectionException;
-import com.urhola.vehicletracker.request.GetVehiclesRequest;
-import com.urhola.vehicletracker.resource.vehicle.Vehicle;
 import java.util.List;
+import org.apache.http.NameValuePair;
 
 /**
  *
  * @author janikoskela
  */
-public class VehicleTracker {
-    public static List<Vehicle> getVechiles(GetVehiclesRequest request) throws ConnectionException {
-        Connection connection = Connection.getConnection(request);
-        return connection.getVechiles(request);
-    } 
+public abstract class HttpRequest {
+    public abstract List<NameValuePair> getParams();
 }

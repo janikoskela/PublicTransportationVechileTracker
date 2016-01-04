@@ -18,6 +18,8 @@ package com.urhola.vehicletracker.connection;
 
 import com.urhola.vehicletracker.connection.mattersoft.MatterSoftLiveHelsinki;
 import com.urhola.vehicletracker.exception.ConnectionException;
+import com.urhola.vehicletracker.request.GetVehiclesRequest;
+import com.urhola.vehicletracker.request.Request;
 import com.urhola.vehicletracker.resource.vehicle.Vehicle;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -31,9 +33,10 @@ import java.util.List;
  */
 public abstract class Connection {
 
-    public abstract List<Vehicle> getVechiles(String longitude1, String longitude2, String latitude1, String latitude2) throws ConnectionException;
+    public abstract List<Vehicle> getVechiles(GetVehiclesRequest request) throws ConnectionException;
     
-    public static Connection getConnection(String longitude1, String longitude2, String latitude1, String latitude2) {
+    public static Connection getConnection(Request request) {
+        //TODO: select api based on location coordinates
         return new MatterSoftLiveHelsinki();
     }
     

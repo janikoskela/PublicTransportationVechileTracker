@@ -19,6 +19,7 @@ package com.urhola.vehicletracker.connection.mattersoft;
 import com.urhola.vehicletracker.connection.Connection;
 import com.urhola.vehicletracker.exception.ConnectionException;
 import static com.urhola.vehicletracker.parse.MatterSoftParser.parseGetVehiclesInputStream;
+import com.urhola.vehicletracker.request.GetVehiclesRequest;
 import com.urhola.vehicletracker.request.mattersoft.MatterSoftGetVehiclesRequest;
 import com.urhola.vehicletracker.resource.vehicle.Vehicle;
 import java.io.IOException;
@@ -63,8 +64,8 @@ public class MatterSoftLiveHelsinki extends Connection {
     }
 
     @Override
-    public List<Vehicle> getVechiles(String longitude1, String longitude2, String latitude1, String latitude2) throws ConnectionException {
-        MatterSoftGetVehiclesRequest req = new MatterSoftGetVehiclesRequest(longitude1, longitude2, latitude1, latitude2);
+    public List<Vehicle> getVechiles(GetVehiclesRequest request) throws ConnectionException {
+        MatterSoftGetVehiclesRequest req = new MatterSoftGetVehiclesRequest(request.getLongitude1(), request.getLongitude2(), request.getLatitude1(), request.getLatitude2());
         List<NameValuePair> params = req.getParams();
         HttpURLConnection urlConnection = this.getOpenedConnection(params, REQUEST_METHOD_GET);
         InputStream in = null;

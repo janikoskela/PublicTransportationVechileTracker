@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 janikoskela
+ * Copyright (C) 2016 janikoskela
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,13 +16,37 @@
  */
 package com.urhola.vehicletracker.request;
 
-import java.util.List;
-import org.apache.http.NameValuePair;
-
 /**
  *
  * @author janikoskela
  */
 public abstract class Request {
-    public abstract List<NameValuePair> getParams();
+    private String longitude1;
+    private String latitude1;
+    private String longitude2;
+    private String latitude2;
+
+    public Request(String longitude1, String latitude1, String longitude2, String latitude2) {
+        this.longitude1 = longitude1;
+        this.latitude1 = latitude1;
+        this.longitude2 = longitude2;
+        this.latitude2 = latitude2;
+    }
+
+    public String getLongitude1() {
+        return longitude1;
+    }
+
+    public String getLatitude1() {
+        return latitude1;
+    }
+
+    public String getLongitude2() {
+        return longitude2;
+    }
+
+    public String getLatitude2() {
+        return latitude2;
+    }
+    
 }

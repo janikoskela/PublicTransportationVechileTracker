@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 janikoskela
+ * Copyright (C) 2016 janikoskela
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,21 +14,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.urhola.vehicletracker;
-
-import com.urhola.vehicletracker.connection.Connection;
-import com.urhola.vehicletracker.exception.ConnectionException;
-import com.urhola.vehicletracker.request.GetVehiclesRequest;
-import com.urhola.vehicletracker.resource.vehicle.Vehicle;
-import java.util.List;
+package com.urhola.vehicletracker.request;
 
 /**
  *
  * @author janikoskela
  */
-public class VehicleTracker {
-    public static List<Vehicle> getVechiles(GetVehiclesRequest request) throws ConnectionException {
-        Connection connection = Connection.getConnection(request);
-        return connection.getVechiles(request);
-    } 
+public class GetVehiclesRequest extends Request {
+
+    public GetVehiclesRequest(String longitude1, String latitude1, String longitude2, String latitude2) {
+        super(longitude1, latitude1, longitude2, latitude2);
+    }
 }

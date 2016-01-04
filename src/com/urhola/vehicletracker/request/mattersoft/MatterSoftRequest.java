@@ -16,7 +16,7 @@
  */
 package com.urhola.vehicletracker.request.mattersoft;
 
-import com.urhola.vehicletracker.request.Request;
+import com.urhola.vehicletracker.request.HttpRequest;
 import com.urhola.vehicletracker.request.Title;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ import org.apache.http.message.BasicNameValuePair;
  *
  * @author janikoskela
  */
-public class MatterSoftRequest extends Request {
+public class MatterSoftRequest extends HttpRequest {
     /**
     * 0 = Request is for all the vehicles, 1 = Request is for all vehicles logged on routes.
     */
