@@ -46,7 +46,6 @@ public class MatterSoftLiveHelsinki extends Connection {
         try {
             URIBuilder b = new URIBuilder(BASE_URL);
             b.addParameters(params);
-            b.setCharset(Charset.forName("UTF-8"));
             URL url = b.build().toURL();
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setDoOutput(true);
