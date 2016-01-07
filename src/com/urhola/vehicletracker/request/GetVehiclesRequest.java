@@ -29,8 +29,8 @@ public class GetVehiclesRequest extends Request {
     
     public GetVehiclesRequest() {}
     
-    public GetVehiclesRequest(String longitude1, String latitude1, String longitude2, String latitude2) {
-        super(longitude1, latitude1, longitude2, latitude2);
+    public GetVehiclesRequest(Double southWestLongitude, Double southWestLatitude, Double northEastLongitude, Double northEastLatitude) {
+        super(southWestLongitude, southWestLatitude, northEastLongitude, northEastLatitude);
     }
     
     @Override

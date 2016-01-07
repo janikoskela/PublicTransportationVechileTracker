@@ -28,8 +28,8 @@ public class Vehicle extends Resource implements Serializable {
     private static final long serialVersionUID = 7526472295622776147L;
     private String id;
     private String routeId;
-    private String latitude;
-    private String longitude;
+    private Double latitude;
+    private Double longitude;
     private Double bearingDegrees;
     private String direction;
     private String previousStop;
@@ -93,19 +93,19 @@ public class Vehicle extends Resource implements Serializable {
         this.routeId = routeId;
     }
 
-    public String getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
 
-    public String getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
 

@@ -63,7 +63,7 @@ public class MatterSoftLiveHelsinki extends Connection {
 
     @Override
     public List<Vehicle> getVechiles(GetVehiclesRequest request) throws ConnectionException {
-        MatterSoftGetVehiclesRequest req = new MatterSoftGetVehiclesRequest(request.getLongitude1(), request.getLongitude2(), request.getLatitude1(), request.getLatitude2());
+        MatterSoftGetVehiclesRequest req = new MatterSoftGetVehiclesRequest(request.getSouthWestLongitude(), request.getNorthEastLongitude(), request.getSouthWestLatitude(), request.getNorthEastLatitude());
         List<NameValuePair> params = req.getParams();
         HttpURLConnection urlConnection = this.getOpenedConnection(params, REQUEST_METHOD_GET);
         InputStream in = null;

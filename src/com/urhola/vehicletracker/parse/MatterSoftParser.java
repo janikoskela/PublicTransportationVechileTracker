@@ -78,9 +78,9 @@ public class MatterSoftParser {
                     else if (valueCounter == 1)
                         route = value;
                     else if (valueCounter == 2)
-                        latitude = value;
-                    else if (valueCounter == 3)
                         longitude = value;
+                    else if (valueCounter == 3)
+                        latitude = value;
                     else if (valueCounter == 4)
                         bearing = value;
                     else if (valueCounter == 5)
@@ -124,8 +124,12 @@ public class MatterSoftParser {
             }
             vehicle.setId(id);
             vehicle.setRouteId(route);
-            vehicle.setLatitude(latitude);
-            vehicle.setLongitude(longitude);
+            try {
+                vehicle.setLatitude(Double.valueOf(latitude));
+            } catch (Exception e) {}
+            try {
+                vehicle.setLongitude(Double.valueOf(longitude));
+            } catch (Exception e) {}
             try {
                 vehicle.setBearingDegrees(Double.valueOf(bearing));
             } catch (Exception e) {}

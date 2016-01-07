@@ -24,33 +24,33 @@ import com.urhola.vehicletracker.request.Title;
  */
 public class MatterSoftGetVehiclesRequest extends MatterSoftRequest {
     @Title("type")
-    private String type = "vehicles";
+    private final String type = "vehicles";
     
     /**
     * 0 = Request is for all the vehicles, 1 = Request is for all vehicles logged on routes.
     */
     @Title("lng1")
-    private String longitude1;
+    private final Double longitude1;
     
     /**
     * 0 = Request is for all the vehicles, 1 = Request is for all vehicles logged on routes.
     */
     @Title("lat1")
-    private String latitude1;
+    private final Double latitude1;
     
     /**
     * 0 = Request is for all the vehicles, 1 = Request is for all vehicles logged on routes.
     */
     @Title("lng2")
-    private String longitude2;
+    private final Double longitude2;
     
     /**
     * 0 = Request is for all the vehicles, 1 = Request is for all vehicles logged on routes.
     */
     @Title("lat2")
-    private String latitude2;
+    private final Double latitude2;
 
-    public MatterSoftGetVehiclesRequest(String longitude1, String longitude2, String latitude1, String latitude2) {
+    public MatterSoftGetVehiclesRequest(Double longitude1, Double longitude2, Double latitude1, Double latitude2) {
         this.latitude1 = latitude1;
         this.latitude2 = latitude2;
         this.longitude1 = longitude1;

@@ -23,51 +23,51 @@ import com.urhola.vehicletracker.exception.ConnectionException;
  * @author janikoskela
  */
 public abstract class Request {
-    private String longitude1;
-    private String latitude1;
-    private String longitude2;
-    private String latitude2;
+    private Double southWestLongitude;
+    private Double southWestLatitude;
+    private Double northEastLongitude;
+    private Double northEastLatitude;
     
     public Request() {}
     
-    public Request(String longitude1, String latitude1, String longitude2, String latitude2) {
-        this.longitude1 = longitude1;
-        this.latitude1 = latitude1;
-        this.longitude2 = longitude2;
-        this.latitude2 = latitude2;
+    public Request(Double southWestLongitude, Double southWestLatitude, Double northEastLongitude, Double northEastLatitude) {
+        this.southWestLongitude = southWestLongitude;
+        this.southWestLatitude = southWestLatitude;
+        this.northEastLongitude = northEastLongitude;
+        this.northEastLatitude = northEastLatitude;
     }
     
     public abstract Object execute() throws ConnectionException;
 
-    public void setLongitude1(String longitude1) {
-        this.longitude1 = longitude1;
+    public void setSouthWestLongitude(Double longitude1) {
+        this.southWestLongitude = longitude1;
     }
 
-    public void setLatitude1(String latitude1) {
-        this.latitude1 = latitude1;
+    public void setSouthWestLatitude(Double latitude1) {
+        this.southWestLatitude = latitude1;
     }
 
-    public void setLongitude2(String longitude2) {
-        this.longitude2 = longitude2;
+    public void setNorthEastLongitude(Double longitude2) {
+        this.northEastLongitude = longitude2;
     }
 
-    public void setLatitude2(String latitude2) {
-        this.latitude2 = latitude2;
+    public void setNorthEastLatitude(Double latitude2) {
+        this.northEastLatitude = latitude2;
     }
 
-    public String getLongitude1() {
-        return longitude1;
+    public Double getSouthWestLongitude() {
+        return southWestLongitude;
     }
 
-    public String getLatitude1() {
-        return latitude1;
+    public Double getSouthWestLatitude() {
+        return southWestLatitude;
     }
 
-    public String getLongitude2() {
-        return longitude2;
+    public Double getNorthEastLongitude() {
+        return northEastLongitude;
     }
 
-    public String getLatitude2() {
-        return latitude2;
+    public Double getNorthEastLatitude() {
+        return northEastLatitude;
     }
 }
