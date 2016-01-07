@@ -16,6 +16,8 @@
  */
 package com.urhola.vehicletracker.request;
 
+import com.urhola.vehicletracker.exception.ConnectionException;
+
 /**
  *
  * @author janikoskela
@@ -25,11 +27,31 @@ public abstract class Request {
     private String latitude1;
     private String longitude2;
     private String latitude2;
-
+    
+    public Request() {}
+    
     public Request(String longitude1, String latitude1, String longitude2, String latitude2) {
         this.longitude1 = longitude1;
         this.latitude1 = latitude1;
         this.longitude2 = longitude2;
+        this.latitude2 = latitude2;
+    }
+    
+    public abstract Object execute() throws ConnectionException;
+
+    public void setLongitude1(String longitude1) {
+        this.longitude1 = longitude1;
+    }
+
+    public void setLatitude1(String latitude1) {
+        this.latitude1 = latitude1;
+    }
+
+    public void setLongitude2(String longitude2) {
+        this.longitude2 = longitude2;
+    }
+
+    public void setLatitude2(String latitude2) {
         this.latitude2 = latitude2;
     }
 
@@ -48,5 +70,4 @@ public abstract class Request {
     public String getLatitude2() {
         return latitude2;
     }
-    
 }

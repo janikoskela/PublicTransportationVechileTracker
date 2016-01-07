@@ -16,13 +16,26 @@
  */
 package com.urhola.vehicletracker.request;
 
+import com.urhola.vehicletracker.connection.Connection;
+import com.urhola.vehicletracker.exception.ConnectionException;
+import com.urhola.vehicletracker.resource.vehicle.Vehicle;
+import java.util.List;
+
 /**
  *
  * @author janikoskela
  */
 public class GetVehiclesRequest extends Request {
-
+    
+    public GetVehiclesRequest() {}
+    
     public GetVehiclesRequest(String longitude1, String latitude1, String longitude2, String latitude2) {
         super(longitude1, latitude1, longitude2, latitude2);
+    }
+    
+    @Override
+    public List<Vehicle> execute() throws ConnectionException {
+        Connection connection = Connection.getConnection(this);
+        return connection.getVechiles(this);
     }
 }
