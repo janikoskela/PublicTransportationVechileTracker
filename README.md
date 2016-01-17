@@ -3,7 +3,7 @@ So the idea is to create a library which can deliver locational data to the user
 
 # Supported APIs
  - Helsinki region
-  - HSL Live 1.6 by MatterSoft (http://www.mattersoft.fi/)
+  - HSL Live 1.6 by <a href="http://www.mattersoft.fi/">MatterSoft</a> ( <a href="https://dl.dropboxusercontent.com/u/20567085/Mattersoft%20Live%21%20interface%20description%20v1_6.pdf">API documentation</a> )
 
 # Dependencies
 Uses Apaches HttpComponents:
