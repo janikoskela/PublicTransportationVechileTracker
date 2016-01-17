@@ -1,5 +1,5 @@
 # Vehicle-Tracker
-So the idea is to create a library which can support multiple public transportation vehicle tracking APIs.
+So the idea is to create a library which can deliver locational data to the user from public transportation vehicles from multiple tracking APIs.
 
 # Supported APIs
  - Helsinki region
