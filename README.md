@@ -2,7 +2,8 @@
 So the idea is to create a library which can support multiple public transportation vehicle tracking APIs.
 
 # Supported APIs
- - HSL Live 1.6 (MatterSoft)
+ - Helsinki region
+  - HSL Live 1.6 by MatterSoft (http://www.mattersoft.fi/)
 
 # Dependencies
 Uses Apaches HttpComponents:
