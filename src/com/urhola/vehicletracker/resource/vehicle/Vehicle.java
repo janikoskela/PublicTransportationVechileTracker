@@ -28,6 +28,7 @@ public class Vehicle extends Resource implements Serializable {
     private static final long serialVersionUID = 7526472295622776147L;
     private String id;
     private String routeId;
+    private String shortRouteId;
     private Double latitude;
     private Double longitude;
     private Double bearingDegrees;
@@ -40,6 +41,14 @@ public class Vehicle extends Resource implements Serializable {
     private String name;
     private Double speed;
     private Double acceleration;
+
+    public String getShortRouteId() {
+        return shortRouteId;
+    }
+
+    public void setShortRouteId(String shortRouteId) {
+        this.shortRouteId = shortRouteId;
+    }
     
     public boolean isBus() {
         return this instanceof Bus;

@@ -56,6 +56,48 @@ public class MatterSoftParser {
             return TYPE_VEHICLE_UNKNOWN;
         }
     }
+    
+    public static String getShortRouteId(String routeId) {
+        return getShortRouteId(routeId, "");
+    }
+    
+    public static String getShortRouteId(String routeId, String vehicleType) {
+        try {
+            String shortRouteId = "";
+            switch(vehicleType) {
+                case TYPE_VEHICLE_METRO:
+                    shortRouteId = routeId;
+                    break;
+                case TYPE_VEHICLE_BUS:
+                    shortRouteId = routeId;
+                    break;
+                case TYPE_VEHICLE_TRAIN:
+                    shortRouteId = routeId;
+                    break;
+                case TYPE_VEHICLE_TRAM:
+                    char firstIndex = routeId.charAt(2);
+                    if (firstIndex != '0')
+                        shortRouteId = String.valueOf(firstIndex);
+                    shortRouteId += String.valueOf(routeId.charAt(3));
+                    break;
+                case TYPE_VEHICLE_FERRY:
+                    shortRouteId = routeId;
+                    break;
+                case TYPE_VEHICLE_KUTSU_PLUS:
+                    shortRouteId = routeId;
+                    break;
+                case TYPE_VEHICLE_UNKNOWN:
+                default:
+                    shortRouteId = routeId;
+                    break;
+            }
+            return shortRouteId;
+        } catch (Exception e) {
+            if (routeId == null)
+                return "";
+            return routeId;
+        }
+    }
 
     public static List<Vehicle> parseGetVehiclesInputStream(InputStream in) throws IOException {
         //Id, route, lat, lng, bearing, direction, previous stop, current stop, departure
@@ -124,6 +166,10 @@ public class MatterSoftParser {
             }
             vehicle.setId(id);
             vehicle.setRouteId(route);
+            if (vehicle instanceof Tram)
+                vehicle.setShortRouteId(getShortRouteId(route, TYPE_VEHICLE_TRAM));
+            else
+                vehicle.setShortRouteId(getShortRouteId(route));
             try {
                 vehicle.setLatitude(Double.valueOf(latitude));
             } catch (Exception e) {}
